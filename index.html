@@ -14,7 +14,7 @@
 
         <script type="module">
 
-        import './xrsystem.js';
+        import XRSystem from './xrsystem.js';
         import { App } from './app.js';
 
             // self calling function
@@ -27,6 +27,10 @@
             console.log(session.renderState);
         }
         })();
+
+
+
+
 
         document.addEventListener("DOMContentLoaded", function(){
             const app = new App();
