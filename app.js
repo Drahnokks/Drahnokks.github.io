@@ -64,6 +64,7 @@ class App{
 			objLoader.load('ressources/RubiksCube.obj', (root) => {
 				scene.add(root);
 				});
+			});
 			
             //mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
             //mesh.quaternion.setFromRotationMatrix( controller.matrixWorld );
