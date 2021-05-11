@@ -52,12 +52,18 @@ class App{
         let controller;
         
         function onSelect() {
-            const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
-            const mesh = new THREE.Mesh( self.geometry, material );
-            mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
-            mesh.quaternion.setFromRotationMatrix( controller.matrixWorld );
-            self.scene.add( mesh );
-            self.meshes.push( mesh );
+            //const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
+            //const mesh = new THREE.Mesh( self.geometry, material );
+			
+			  const objLoader = new OBJLoader();
+				objLoader.load('resources/models/windmill/windmill.obj', (root) => {
+				scene.add(root);
+				});
+			
+            //mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
+            //mesh.quaternion.setFromRotationMatrix( controller.matrixWorld );
+            //self.scene.add( mesh );
+            //self.meshes.push( mesh );
         }
 
         const btn = new ARButton( this.renderer );
