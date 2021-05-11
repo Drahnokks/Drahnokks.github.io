@@ -56,7 +56,7 @@ class App{
             //const mesh = new THREE.Mesh( self.geometry, material );
 			
 			  const objLoader = new OBJLoader();
-				objLoader.load('resources/RubiksCube.obj', (root) => {
+				objLoader.load('ressources/RubiksCube.obj', (root) => {
 				scene.add(root);
 				});
 			
