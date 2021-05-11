@@ -2,6 +2,8 @@ import * as THREE from './three.module.js';
 import { OrbitControls } from './OrbitControls.js';
 import { Stats } from './stats.module.js';
 import { ARButton } from './ARButton.js';
+import { OBJLoader } from './objloader.js';
+import { MTLLoader} from './mtlloader.js';
 
 class App{
 
@@ -54,9 +56,12 @@ class App{
         function onSelect() {
             //const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
             //const mesh = new THREE.Mesh( self.geometry, material );
-			
-			  const objLoader = new OBJLoader();
-				objLoader.load('ressources/RubiksCube.obj', (root) => {
+			const mtlLoader = new MTLLoader();
+			mtlLoader.load('ressources/RubiksCube.mtl'', (mtl) => {
+				mtl.preload();
+			const objLoader = new OBJLoader();
+				objLoader.setMaterials(mtl);
+			objLoader.load('ressources/RubiksCube.obj', (root) => {
 				scene.add(root);
 				});
 			
