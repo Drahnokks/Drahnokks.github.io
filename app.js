@@ -2,6 +2,7 @@ import * as THREE from './three.module.js';
 import { OrbitControls } from './OrbitControls.js';
 import { Stats } from './stats.module.js';
 import { ARButton } from './ARButton.js';
+import { OBJLoader } from './objloader.js'
 
 class App{
 
@@ -54,10 +55,16 @@ class App{
         function onSelect() {
             const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
             const mesh = new THREE.Mesh( self.geometry, material );
-            mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
-            mesh.quaternion.setFromRotationMatrix( controller.matrixWorld );
-            self.scene.add( mesh );
-            self.meshes.push( mesh );
+			
+			const objLoader = new OBJLoader();
+			objLoader.load('resources/RubiksCube.obj', (root) => {
+			scene.add(root);
+			});
+			
+            //mesh.position.set( 0, 0, - 0.3 ).applyMatrix4( controller.matrixWorld );
+            //mesh.quaternion.setFromRotationMatrix( controller.matrixWorld );
+            //self.scene.add( mesh );
+            //self.meshes.push( mesh );
         }
 
         const btn = new ARButton( this.renderer );
