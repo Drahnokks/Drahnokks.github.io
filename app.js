@@ -57,7 +57,7 @@ class App{
             //const material = new THREE.MeshPhongMaterial( { color: 0xffffff } );
             //const mesh = new THREE.Mesh( self.geometry, material );
 			const mtlLoader = new MTLLoader();
-			mtlLoader.load('ressources/RubiksCube.mtl'', (mtl) => {
+			mtlLoader.load('ressources/RubiksCube.mtl', (mtl) => {
 				mtl.preload();
 			const objLoader = new OBJLoader();
 				objLoader.setMaterials(mtl);
