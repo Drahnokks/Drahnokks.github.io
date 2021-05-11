@@ -56,7 +56,7 @@ class App{
             //const mesh = new THREE.Mesh( self.geometry, material );
 			
 			  const objLoader = new OBJLoader();
-				objLoader.load('resources/models/windmill/windmill.obj', (root) => {
+				objLoader.load('resources/RubiksCube.obj', (root) => {
 				scene.add(root);
 				});
 			
