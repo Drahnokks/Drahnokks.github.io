@@ -62,7 +62,7 @@ class App{
 			const objLoader = new OBJLoader();
 				objLoader.setMaterials(mtl);
 			objLoader.load('ressources/RubiksCube.obj', (root) => {
-				scene.add(root);
+				self.scene.add(root);
 				});
 			});
 			
